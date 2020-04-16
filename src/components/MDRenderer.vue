@@ -55,6 +55,15 @@ export default {
                 console.log(error);
             })
       }
+  },
+  mounted() {
+    this.$store.watch(
+      state => state.isLoggedIn,
+      () => {
+        //reload after login/logout (update access rights)
+        this.loadFile(this.file);
+      }
+    );
   }
 };
 </script>
