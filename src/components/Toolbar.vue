@@ -15,10 +15,10 @@
         <a
             class
             href="https://hfg-gmuend.zoom.us"
-            target="_blank"
-            v-if="this.$store.state.detailsLoaded && this.$store.getters.appRechte.ZoomLicense"
+            target="_blank"            
         >
             <icon name="fa fa-video-camera"></icon>Zoom
+            <span v-if="this.$store.state.detailsLoaded && !this.$store.getters.appRechte.ZoomLicense">(Basic)</span>
         </a>
     </div>
 </template>
