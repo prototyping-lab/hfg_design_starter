@@ -53,7 +53,7 @@
                             aria-expanded="false"
                             aria-controls="collapseContent"
                             type="button"
-                            class="btn btn-default mt-3 bg-default text-white"
+                            class="btn btn-default mt-3 bg-default text-white collapsed"
                         ></button>
                     </div>
                 </div>
