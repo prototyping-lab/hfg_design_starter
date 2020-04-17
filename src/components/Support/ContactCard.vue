@@ -19,7 +19,7 @@
                             <div class="d-flex align-items-center">
                                 <h5 class="title">
                                     <span class="d-block">{{contactCard.supportTeam}}</span>
-                                    <small class="h6 text-muted">{{contactCard.name}}</small>
+                                    <!-- <small class="h6 text-muted">{{contactCard.name}}</small> -->
                                 </h5>
                             </div>
                         </li>
@@ -33,10 +33,11 @@
                                 <p class="mb-0"><a :href="'https://hfggmuend.slack.com/app_redirect?channel='+contactCard.slack" target='_blank'>ask-helpdesk</a></p>
                                 <!--</p> -->
                             </div>
-                            <!-- <div class="d-flex align-items-center">
+                            <div class="d-flex align-items-center">
                                 <i class="fa fa-phone mr-2"></i>
-                                <p class="mb-0">{{contactCard.tel}}</p>
-                            </div> -->
+                                <p class="mb-0">{{contactCard.tel}}<br></p>
+                            </div>
+                            <strong>{{contactCard.option}}</strong>
                         </li>
                         <!-- <li class="py-2">
                             <div class="d-flex align-items-center">
