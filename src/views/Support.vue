@@ -134,7 +134,7 @@ export default {
                 {
                     supportTeam: "Orga-Support",
                     name: "Julia Wittich",
-                    email: "support@hfg.design",
+                    email: "am-ma@hfg.design",
                     slack: "C011RA4JY3C",
                     tel: "07171 / 9782916",
                     option: "(bitte nur Dozenten, Profs oder Mitarbeiter)",
