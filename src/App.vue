@@ -34,7 +34,7 @@ export default {
   },
   methods: {
     acceptTos() {
-      console.log("Set tos acceptance for hash "+this.$store.state.tosVersion);
+      //console.log("Set tos acceptance for hash "+this.$store.state.tosVersion);
       this.$http.post("https://76i3an3137.execute-api.eu-central-1.amazonaws.com/prod/accept-tos", JSON.stringify({
           uid: this.$store.state.loggedInUser.id,
           toshash: this.$store.state.tosVersion,
@@ -44,11 +44,11 @@ export default {
           },
       })
       .then((response) => {
-        console.log(response);
+        //console.log(response);
         this.$store.dispatch("triggerGetTosStatus");
       })
       .catch((error) => {
-        console.log(error);
+        //console.log(error);
         this.$store.dispatch("triggerGetTosStatus");
       });
     }
