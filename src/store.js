@@ -199,7 +199,6 @@ export default new Vuex.Store({
           class:element.attendees != undefined ? 'cal_group' : 'cal_solo' ,
         });
       });
-      console.log(tempList);
       return tempList;
     },
     currentTosAccepted: function(state) {
