@@ -15,15 +15,15 @@
             <base-button tag="a" href="#" type="default" class="mt-3" :class="isToday(item.start.dateTime) ? '' : 'disabled'">
               <i class="fa fa-video-camera"></i>
             </base-button>
-            <base-button tag="a" href="#" type="default" class="mt-3">
+            <base-button tag="a" :href="slackLinkFromText(item.description)" target="_blank" type="default" class="mt-3">
               <i class="fa fa-slack"></i>
             </base-button>
-            <base-button tag="a" href="#" type="default" class="mt-3">
+            <base-button tag="a" :href="item.htmlLink" type="default" class="mt-3">
               <i class="fa fa-calendar"></i>
             </base-button>
-            <base-button tag="a" href="#" type="default" class="mt-3">
+            <!-- <base-button tag="a" href="#" type="default" class="mt-3">
               <i class="fa fa-hdd-o"></i>
-            </base-button>
+            </base-button> -->
           </div>
         </card>
       </div>
@@ -73,6 +73,17 @@
       },
       isFuture: function(dateTime) {
         return new Date(dateTime) > new Date();
+      },
+      slackLinkFromText: function(summary) {
+        var parser = new DOMParser;
+        var dom = parser.parseFromString(summary,'text/html');        
+        var tags = Array.from(dom.body.getElementsByTagName("a"));
+        for (let index = 0; index < tags.length; index++) {
+          const element = tags[index];
+          let href = element.getAttribute("href").toString();
+          if(href.substring(0,20).includes("https://slack.com")) return href;
+        }
+        return "#";
       }
     },
     mounted() {
