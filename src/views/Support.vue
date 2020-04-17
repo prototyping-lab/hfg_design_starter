@@ -121,8 +121,7 @@ export default {
                 },
                 {
                     supportTeam: "Hardware-Support",
-                    name: "Aiko Scheuvens",
-                    email: "aiko.scheuvens@hfg.design",
+                    email: "support@hfg.design",
                     slack: "C011RA4JY3C",
                     tel: "07171 / 9782912",
                     option: "",
@@ -135,7 +134,7 @@ export default {
                 {
                     supportTeam: "Orga-Support",
                     name: "Julia Wittich",
-                    email: "julia.wittich@hfg.design",
+                    email: "support@hfg.design",
                     slack: "C011RA4JY3C",
                     tel: "07171 / 9782916",
                     option: "(bitte nur Dozenten, Profs oder Mitarbeiter)",
