@@ -20,7 +20,7 @@
     "vue-axios": "^2.1.5",
     "vue-cal": "^3.2.0",
     "vue-flatpickr-component": "^8.1.1",
-    "vue-google-api": "^0.2.0",
+    "vue-google-api": "https://github.com/fg-uulm/vue-google-api.git",
     "vue-google-oauth2": "^1.4.3",
     "vue-lazyload": "^1.2.6",
     "vue-markdown": "^2.2.4",

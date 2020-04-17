@@ -109,7 +109,7 @@ export default new Vuex.Store({
       },
       triggerLogin(context) {
          context.commit('SET_LOGGING_IN_STATUS', true);
-         this._vm.$gapi.signIn()
+         this._vm.$gapi.signIn({"prompt": "select_account"})
             .then(user => {
                 context.commit('SET_LOGGED_IN', user);
                 context.commit('SET_LOGGING_IN_STATUS', false);
