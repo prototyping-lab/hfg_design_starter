@@ -19,7 +19,7 @@
                             <div class="d-flex align-items-center">
                                 <h5 class="title">
                                     <span class="d-block">{{contactCard.supportTeam}}</span>
-                                    <!-- <small class="h6 text-muted">{{contactCard.name}}</small> -->
+                                    <small class="h6 font-weight-normal">{{contactCard.name}}</small>
                                 </h5>
                             </div>
                         </li>

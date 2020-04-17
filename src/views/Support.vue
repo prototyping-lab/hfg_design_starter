@@ -69,7 +69,8 @@
 
                 <div class="row mb-lg mt-5">
                     <div class="col-lg-4">
-                        <h2>Organisatorischer Support für Dozenten und Mitarbeiter</h2>
+                        <h2>Organisatorischer Support</h2>
+                        <h2 class="font-weight-normal">für Dozenten und Mitarbeiter</h2>
                     </div>
                     <div class="col-lg-8">
                         <p>
@@ -108,10 +109,10 @@ export default {
             passTechSupport: [
                 {
                     supportTeam: "User-Support",
-                    name: "Steffen Mitschelen",
+                    name: "",
                     email: "support@hfg.design",
                     slack: "C011RA4JY3C",
-                    tel: "xxx / xxx xxx",
+                    tel: "07171 / 9782912",
                     option: "",
                     reach1: "9:00 – 12:00 Uhr",
                     imgPath: "img/support/team/user-support-1.jpg",
@@ -123,7 +124,7 @@ export default {
                     name: "Aiko Scheuvens",
                     email: "aiko.scheuvens@hfg.design",
                     slack: "C011RA4JY3C",
-                    tel: "xxx / xxx xxx",
+                    tel: "07171 / 9782912",
                     option: "",
                     reach1: "9:00 – 17:00 Uhr",
                     imgPath: "img/support/team/tech-support.jpg",
@@ -136,11 +137,11 @@ export default {
                     name: "Julia Wittich",
                     email: "julia.wittich@hfg.design",
                     slack: "C011RA4JY3C",
-                    tel: "xxx / xxx xxx",
+                    tel: "07171 / 9782916",
                     option: "(bitte nur Dozenten, Profs oder Mitarbeiter)",
                     reach1: "9:00 – 17:00 Uhr",
                     imgPath: "img/support/team/am-support.jpg",
-                    question: "Hilfe, wann findet mein Kurs statt?"
+                    question: "Hilfe, wie erreiche ich meine Studenten?"
                 }
             ],
             feedbackMessage: "",
