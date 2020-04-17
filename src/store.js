@@ -80,7 +80,7 @@ export default new Vuex.Store({
           method: 'GET',          
         }).then(response => {
             context.commit('SET_USER_DETAILS_FROM_API', response.result)
-            console.log(response);             
+            //console.log(response);             
         }).catch(function (error) {
             console.log(error);
         })
@@ -91,7 +91,7 @@ export default new Vuex.Store({
           method: 'GET',          
         }).then(response => {
             context.commit('SET_CAL_LIST_FROM_API', response.result.items)
-            console.log(response);             
+            //console.log(response);             
         }).catch(function (error) {
             console.log(error);
         })
@@ -102,7 +102,7 @@ export default new Vuex.Store({
           method: 'GET',          
         }).then(response => {
             context.commit('SET_EVENT_LIST_FROM_API', response.result.items)
-            console.log(response);             
+            //console.log(response);             
         }).catch(function (error) {
             console.log(error);
         })
@@ -113,8 +113,8 @@ export default new Vuex.Store({
             .then(user => {
                 context.commit('SET_LOGGED_IN', user);
                 context.commit('SET_LOGGING_IN_STATUS', false);
-                console.log(user);
-                console.log('Signed in as %s', user.name)
+                //console.log(user);
+                //console.log('Signed in as %s', user.name)
                 context.dispatch('triggerGetTosStatus');
                 context.dispatch('triggerTosRetrieval');
                 context.dispatch('triggerUserDetailsUpdate');
@@ -129,7 +129,7 @@ export default new Vuex.Store({
           this._vm.$gapi.signOut()
               .then(user => {
                   context.commit('SET_LOGGED_OUT', user);
-                  console.log('Signed out as %s', user.name)
+                  //console.log('Signed out as %s', user.name)
               })
               .catch(err => {
                   console.error('Sign out error: %s', err)
@@ -144,10 +144,10 @@ export default new Vuex.Store({
               },
           }).then(response => {
               context.commit('SET_TOS_VERSION', response.result.md5Checksum);
-              console.log("LOADED TOS! Current hash: "+response.result.md5Checksum);
+              //console.log("LOADED TOS! Current hash: "+response.result.md5Checksum);
           }).catch(function (error) {
               // handle error
-              console.log(error);
+              //console.log(error);
           })
       },
       triggerTosOnetimeAccept(context) {
@@ -157,16 +157,16 @@ export default new Vuex.Store({
       triggerGetTosStatus(context) {
           this._vm.$http.get("https://76i3an3137.execute-api.eu-central-1.amazonaws.com/prod/accept-tos?uid="+this.state.loggedInUser.id).then(response => {
               //
-              console.log("USERTOS RESPONSE for id "+this.state.loggedInUser.id);
-              console.log(response);
+              //console.log("USERTOS RESPONSE for id "+this.state.loggedInUser.id);
+              //console.log(response);
               if(response.data != "") {
                 context.commit('SET_USER_TOS_VERSION', response.data.toshash);
               } else {
                 context.commit('SET_USER_TOS_VERSION', "invalid");
               }
-              console.log(response);
+              //console.log(response);
           }).catch(function (error) {
-              console.log(error);
+              //console.log(error);
           })
       }
 

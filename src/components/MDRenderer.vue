@@ -30,7 +30,6 @@ export default {
         // the callback will be called immediately after the start of the observation
         immediate: true,
         handler (newVal, oldVal) { // watch it
-          console.log('Prop changed: ', newVal, ' | was: ', oldVal)
           this.isLoaded = false;
           this.loadFile(newVal)
         }
@@ -49,7 +48,6 @@ export default {
             }).then(response => {
                 this.content = response.body;
                 this.isLoaded = true;
-                console.log("LOADED!");
             }).catch(function (error) {
                 // handle error
                 console.log(error);
