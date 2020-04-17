@@ -78,10 +78,20 @@
         var parser = new DOMParser;
         var dom = parser.parseFromString(summary,'text/html');        
         var tags = Array.from(dom.body.getElementsByTagName("a"));
+       
         for (let index = 0; index < tags.length; index++) {
           const element = tags[index];
           let href = element.getAttribute("href").toString();
           if(href.substring(0,20).includes("https://slack.com")) return href;
+        }
+
+        if(dom.body.innerText.includes("https://slack.com")) {
+          let t = dom.body.innerText.split("\n");
+          for (let j = 0; j < t.length; j++) {
+            const l = t[j];
+            let idx = l.indexOf("https://slack.com");
+            if(idx > -1) return l.substring(idx);            
+          }   
         }
         return "#";
       }
