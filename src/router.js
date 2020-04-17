@@ -22,8 +22,12 @@ export default new Router({
         footer: AppFooter
       }
     },
+    { 
+      path: '/knowledgebase', 
+      redirect: '/knowledgebase/start' 
+    },
     {
-      path: "/knowledgebase",
+      path: "/knowledgebase/:fid",
       name: "knowledgebase",
       components: {
         header: AppHeader,

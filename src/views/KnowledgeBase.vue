@@ -36,12 +36,28 @@ export default {
   },
   methods: {
       loadFile: function (id) {
-          console.log("Loading "+id)
+          if(id == "start") id = "1WkRsvJwwRePQ2R2ksI2z4BOzIVPasBrf";
           this.currentFile = id;
+          this.$router.push({ path: `/knowledgebase/${id}` })
       }
   },
+  watch: {
+    '$route' (to, from) {
+        if(to.params.fid != "start") {
+          this.currentFile = to.params.fid;
+        }
+        else{
+          this.currentFile =  "1WkRsvJwwRePQ2R2ksI2z4BOzIVPasBrf";
+        }
+    }
+  },
   mounted () {
-    this.currentFile = "1WkRsvJwwRePQ2R2ksI2z4BOzIVPasBrf";
+    if(this.$route.params.fid != "start") {
+      this.currentFile = this.$route.params.fid;
+    }
+    else{
+      this.currentFile =  "1WkRsvJwwRePQ2R2ksI2z4BOzIVPasBrf";
+    } 
   }
 };
 </script>
