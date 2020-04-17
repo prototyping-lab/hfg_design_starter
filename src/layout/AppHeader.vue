@@ -15,13 +15,13 @@
                     <router-link to="/">Start</router-link>
                 </li>-->
                 <li class="nav-item" v-if="this.$store.state.isLoggedIn">
-                    <router-link to="knowledgebase">Knowledgebase</router-link>
+                    <router-link to="/knowledgebase">Knowledgebase</router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link to="support">Support</router-link>
+                    <router-link to="/support">Support</router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link to="datenschutz">Datenschutz</router-link>
+                    <router-link to="/datenschutz">Datenschutz</router-link>
                 </li>
                 <!-- <li class="nav-item">
                     <router-link to="datenschutz">Impressum</router-link>
