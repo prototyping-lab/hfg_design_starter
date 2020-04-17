@@ -37,7 +37,6 @@ export default {
         handler (val, oldVal) {
             this.$http.get("https://76i3an3137.execute-api.eu-central-1.amazonaws.com/prod/slackbridge/news")           
             .then(response => {
-              console.log(response);
               this.list = response.data.messages.filter(function(msg) {                                          
                       return msg.subtype == undefined;
               });

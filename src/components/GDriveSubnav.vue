@@ -71,7 +71,6 @@ export default {
                     q: "'"+val+"' in parents and trashed = false",
                 }
             }).then(response => {
-                console.log(response); 
                 this.list = response.result.files;
                 this.list.sort(function(a, b) {
                     var textA = a.name.toUpperCase();

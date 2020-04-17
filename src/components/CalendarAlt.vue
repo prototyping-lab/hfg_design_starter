@@ -52,7 +52,6 @@
       },
        onEventClick (event, e) {
         this.selectedEvent = event
-        console.log(event);
         var win = window.open(event.link, '_blank');
         win.focus();
         // Prevent navigating to narrower view (default vue-cal behavior).
