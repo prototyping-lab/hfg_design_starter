@@ -72,11 +72,17 @@ export default {
                 }
             }).then(response => {
                 this.list = response.result.files;
+                this.list = this.list.filter(function(item) {
+                    return !item.name.startsWith("__");
+                });
                 this.list.sort(function(a, b) {
                     var textA = a.name.toUpperCase();
                     var textB = b.name.toUpperCase();
                     return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
                 });
+                for(let i in this.list) {
+                    this.list[i].name = this.list[i].name.substring(this.list[i].name.indexOf("__")+2);
+                }
             }).catch(function (error) {
                 // handle error
                 console.log(error);
