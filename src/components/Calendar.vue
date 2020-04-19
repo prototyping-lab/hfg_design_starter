@@ -3,7 +3,7 @@
   <div class="col-lg-12" v-for="(item, index) in nextUpItems" v-bind:key="index">
         <card class="calcard" shadow body-classes="py-3">
           <div style="position:absolute; right:1rem; top:1rem;">
-            {{item.organizer.displayName}}
+            {{groupFromText(item)}}
           </div>
           <h6 class="text-default" style="max-width:75%">
             {{item.summary}}
@@ -12,7 +12,7 @@
           </h6>
           <span class="text-muted">{{formatDatetime(item.start.dateTime)}} Uhr</span>          
           <div class="botbut">
-            <base-button tag="a" href="#" type="default" class="mt-3" :class="isToday(item.start.dateTime) ? '' : 'disabled'">
+            <base-button tag="a" :href="zoomLinkFromText(item.description)" target="_blank" type="default" class="mt-3" :class="zoomLinkFromText(item.description) != '#' ? '' : 'disabled'">
               <i class="fa fa-video-camera"></i>
             </base-button>
             <base-button tag="a" :href="slackLinkFromText(item.description)" target="_blank" type="default" class="mt-3">
@@ -75,25 +75,20 @@
         return new Date(dateTime) > new Date();
       },
       slackLinkFromText: function(summary) {
-        var parser = new DOMParser;
-        var dom = parser.parseFromString(summary,'text/html');        
-        var tags = Array.from(dom.body.getElementsByTagName("a"));
-       
-        for (let index = 0; index < tags.length; index++) {
-          const element = tags[index];
-          let href = element.getAttribute("href").toString();
-          if(href.substring(0,20).includes("https://slack.com")) return href;
-        }
-
-        if(dom.body.innerText.includes("https://slack.com")) {
-          let t = dom.body.innerText.split("\n");
-          for (let j = 0; j < t.length; j++) {
-            const l = t[j];
-            let idx = l.indexOf("https://slack.com");
-            if(idx > -1) return l.substring(idx);            
-          }   
-        }
-        return "#";
+        console.log(summary);
+        let links = summary.match(/https:\/\/slack\.com\/[^"<]*/gi)
+        if(links != undefined && links.length > 0) return links[0];
+        else return "#";
+      },
+      zoomLinkFromText: function(summary) {
+        let links = summary.match(/https:\/\/hfg-gmuend\.zoom\.us\/[^"<]*/gi)
+        if(links != undefined && links.length > 0) return links[0];
+        else return "#";
+      },
+      groupFromText: function(item) {
+        let groups = item.description.match(/[^"<\n]*/i)
+        if(groups != undefined && groups.length > 0) return groups[0];
+        else return item.organizerDisplayName;
       }
     },
     mounted() {
