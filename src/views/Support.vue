@@ -124,7 +124,7 @@ export default {
                     name: "Aiko Scheuvens",
                     email: "support@hfg.design",
                     slack: "C011RA4JY3C",
-                    tel: "07171 / 602623 ",
+                    tel: "07171 / 602623",
                     option: "",
                     reach1: "9:00 – 17:00 Uhr",
                     imgPath: "img/support/team/tech-support.jpg",
