@@ -114,16 +114,17 @@ export default {
                     slack: "C011RA4JY3C",
                     tel: "07171 / 9782912",
                     option: "",
-                    reach1: "9:00 – 12:00 Uhr",
+                    reach1: "9:00 – 17:00 Uhr",
                     imgPath: "img/support/team/user-support-1.jpg",
                     question:
                         "Warum funktioniert meine @hfg.design Anmeldung nicht?"
                 },
                 {
                     supportTeam: "Hardware-Support",
+                    name: "Aiko Scheuvens",
                     email: "support@hfg.design",
                     slack: "C011RA4JY3C",
-                    tel: "07171 / 9782912",
+                    tel: "07171 / 602623 ",
                     option: "",
                     reach1: "9:00 – 17:00 Uhr",
                     imgPath: "img/support/team/tech-support.jpg",
